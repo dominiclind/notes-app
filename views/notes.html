@@ -1,0 +1,23 @@
+<ul class="notes">
+	
+	<li class="note new" ng-click="newNote()">
+		<span class="add entypo plus"></span>
+	</li>
+
+	<li class="note" ng-repeat="note in notes | orderBy:'id':true">
+		<div class="markdown" ng-click="viewNote(note)" ng-bind-html="note.note | markdown"></div>
+		
+		<div class="d-wrap"> 
+			<p class="date">{{note.id | date:'yyyy MM dd'}}</p>
+		</div>
+
+		<a class="delete entypo cross" ng-click="deleteNote(note)"></a>
+
+	</li>
+
+</ul>
+
+
+<nav>
+	<a class="entypo pencil" ng-click="newNote();"></a>
+</nav>
