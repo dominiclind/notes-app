@@ -6,6 +6,8 @@ module.exports = function(grunt) {
         dist: 'build'
     };
 
+    paths.dist = '';
+
     grunt.initConfig({
         paths : paths,
         pkg: grunt.file.readJSON('package.json'),
