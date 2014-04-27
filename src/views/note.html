@@ -1,0 +1,19 @@
+<div class="write-note" ng-if="edit">
+	<textarea autofocus ng-model="note.note" class="md-edit" placeholder="write here.." debounce="300"></textarea>
+</div>
+
+<div class="markdown center">
+	<div ng-bind-html="note.note | markdown" ng-if="!edit"></div>
+</div>
+
+<nav>
+
+	<a class="list entypo" ng-click="viewNotes()"></a>
+
+
+	<a class="preview entypo eye" ng-click="toggleEdit()" ng-hide="!edit"></a>
+
+	<a class="preview entypo pencil" ng-click="toggleEdit()" ng-hide="edit"></a>
+	
+	<!--a class="save entypo save" ng-click="saveNote();"></a-->
+</nav>

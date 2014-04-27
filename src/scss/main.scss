@@ -1,0 +1,190 @@
+
+
+// main
+
+body{
+	background:$flat-blue-3;
+	
+	&.view-note{
+		background:$flat-gray-1;
+	}
+}
+
+
+// nav
+
+nav{
+	position:fixed;
+	bottom:0;
+	width:100%;
+	text-align:center;
+	margin-bottom:20px;
+
+	a{
+		width:100px;
+		color: $white;
+		font-size: 60px;
+		background: $flat-blue-2;
+		display: inline-block;
+		padding: 40px 30px;
+		border-radius: 2px;
+		margin: 0 5px;
+		text-decoration:none;
+		
+		-webkit-transition:box-shadow 250ms linear, background 100ms linear;
+
+		&:hover{
+			text-decoration:none;
+			background:$white;
+			color:$flat-blue-2;
+			box-shadow:inset 0 0 0 4px $flat-blue-2;
+		}
+	}
+}
+
+
+
+//
+// notes
+//
+.notes{
+	padding:0;
+	margin:0;
+
+	.note{
+
+		&.new{
+			height:200px;
+
+			.add{
+				font-size: 100px;
+				line-height: 200px;
+				text-align: center;
+				width: 100%;
+				display: block;
+				color:$flat-gray-1;
+				background:$flat-blue-4;
+			}
+		}
+
+		position:relative;
+		cursor:pointer;
+		margin:$margin;
+		display:block;
+		float:left;
+		background:$flat-gray-1;
+		width:140px;
+		overflow:hidden;
+
+		.markdown{
+			height:200px;
+			overflow:scroll;
+			*{	
+				font-weight:bold !important;
+				font-size: 5px !important;
+				line-height: 9px;
+				margin: 5px;
+			}
+		}
+
+		.d-wrap{
+			text-align: center;
+			position: absolute;
+			bottom: 0px;
+			width: 100%;
+			-webkit-transition:-webkit-transform 200ms ease-out;
+			-webkit-transform:translateY(120%);
+			
+			.date{
+				background: blue;
+				color: white;
+				padding: 5px 9px;
+				border-radius: 3px;
+				display: inline-block;
+			}
+		}
+
+
+		.delete{
+			z-index:10000;
+			font-size: 70px;
+			padding: 20px 10px;
+			background: red;
+			color: white;
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			text-decoration:none;
+
+			-webkit-transition:-webkit-transform 250ms ease-out;
+			-webkit-transform:translateY(-120%);
+
+
+			&:hover{
+				text-decoration:none;
+				background:white;
+				color:red;
+			}
+			
+		}
+
+
+		&:hover{
+			.d-wrap, .delete{
+				-webkit-transform:translateY(0);
+				
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+/// write NOTE
+//
+
+.center{
+	width: 700px;
+	margin: 50px auto 150px auto;
+}
+.write-note{
+	padding:$padding;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+
+// mark edit
+
+.md-edit{
+	resize: none;
+	background:none;
+	color:black;
+    border: none;
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+	width:100%;
+	height:100%;
+	font-family:'Monaco';
+	font-size:18px;
+}

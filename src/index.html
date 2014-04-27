@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>notes</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="css/arp.css">
+	
+	</head>
+
+	<body ng-app="notes" class="view-{{$root.currentStateName}}" ng-controller="MainCtrl">
+
+		<p ng-repeat="d_note in dropBoxNotes track by $index">{{d_note.text}}</p>
+
+		<a class="button" ng-click="authWithDropBox()">auth with dropbox</a>
+		<a class="button" ng-click="signOutDropBox()">SIGN OUT FROM dropbox</a>
+
+		<!--[if lt IE 8]>
+		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+	
+		<div ui-view></div>
+
+	</body>
+
+	<script src="https://www.dropbox.com/static/api/dropbox-datastores-1.0-latest.js" type="text/javascript"></script>
+
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/showdown.min.js"></script>
+	<script src="js/angular.min.js"></script>
+
+
+	<script src="js/dropstore-ng.js"></script>
+	<script src="js/angular-ui-router.js"></script>
+	<script src="js/angular-animate.min.js"></script>
+	<script src="js/app.js"></script>
+
+</html>
