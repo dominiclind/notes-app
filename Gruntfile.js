@@ -23,7 +23,7 @@ module.exports = function(grunt) {
             },
             build: {
                 files: {
-                    '<%= paths.dist %>/css/<%= pkg.name %>.css': '<%= paths.src %>/scss/imports.scss'
+                    '<%= paths.dist %>css/<%= pkg.name %>.css': '<%= paths.src %>/scss/imports.scss'
                 }
             }
         },
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
             }
         },
         usemin: {
-            html: ['<%= paths.dist %>/{,*/}*.html'],
+            html: ['<%= paths.dist %>{,*/}*.html'],
             options: {
                 dirs: ['<%= paths.dist %>']
             }
@@ -50,14 +50,14 @@ module.exports = function(grunt) {
                 files: [
                     {
                         src: ['<%= paths.src %>/index.html'],
-                        dest: '<%= paths.dist %>/index.html',
+                        dest: '<%= paths.dist %>index.html',
                         filter: 'isFile'
                     },
                     {
                         expand: true,
                         cwd: '<%= paths.src %>/fonts/',
                         src: '**',
-                        dest: '<%= paths.dist %>/fonts/',
+                        dest: '<%= paths.dist %>fonts/',
                         flatten: false,
                         filter: 'isFile'
                     },
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
                         expand: true,
                         cwd: '<%= paths.src %>/views/',
                         src: '**',
-                        dest: '<%= paths.dist %>/views/',
+                        dest: '<%= paths.dist %>views/',
                         flatten: false,
                         filter: 'isFile'
                     },
@@ -73,7 +73,7 @@ module.exports = function(grunt) {
                         expand: true,
                         cwd: '<%= paths.src %>/img/',
                         src: '**',
-                        dest: '<%= paths.dist %>/img/',
+                        dest: '<%= paths.dist %>img/',
                         flatten: false,
                         filter: 'isFile'
                     },
@@ -81,7 +81,7 @@ module.exports = function(grunt) {
                         expand: true,
                         cwd: '<%= paths.src %>/js/',
                         src: '**',
-                        dest: '<%= paths.dist %>/js/',
+                        dest: '<%= paths.dist %>js/',
                         flatten: false,
                         filter: 'isFile'
                     }
