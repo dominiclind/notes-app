@@ -1,8 +1,5 @@
 var app = angular.module('notes', ['ui.router' , 'ngAnimate', 'dropstore-ng']);
 
-
-//r
-
 app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider',
     function($stateProvider, $urlRouterProvider, $httpProvider) {
         $httpProvider.defaults.withCredentials = true;
@@ -24,10 +21,14 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider',
     }
 ]);
 
-app.run(['$rootScope', '$urlRouter', '$state',
-    function($rootScope, $urlRouter, $state) {
+
+app.run(['$rootScope', '$urlRouter', '$state', 'dropstoreClient',
+    function($rootScope, $urlRouter, $state, dropstoreClient) {
         
         $rootScope.$on('$stateChangeSuccess', function(e, toState, toParams, fromState, fromParams) {
+
+        	// check if dropstore is authenticated
+        	//dropstoreClient.isAuthenticated.
             
             $rootScope.currentStateName = toState.name;
             
