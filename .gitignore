@@ -2,3 +2,8 @@
 /node_modules
 /_app
 /build
+/css
+/fonts
+/js
+/views
+index.html
