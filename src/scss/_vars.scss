@@ -1,0 +1,48 @@
+// layout
+$container-max-width: 1100px;
+
+$section-margin : 150px;
+
+
+//breakpoints
+$breakpoint-small : 660px;
+$breakpoint-medium : 768px;
+$breakpoint-large : 1000px;
+
+
+//vars
+$padding : 15px;
+$margin  : 15px;
+
+@media (max-width:$breakpoint-small){
+	$padding : 10px;
+	$margin  : 10px;
+}
+
+
+// colors
+$white          : #ffffff;	
+
+// primary colors
+$blue           : #85cfee;
+$blue_dark      : #63a9c6;
+
+$lightgrey      : #c0c0c0;
+$grey           : #999999;
+$grey_dark      : #666666;
+$black          : #333333;
+
+$bg_grey        : #e8e9ea;
+
+//accent colors
+$green          : #84dca1;
+$green_dark     : #5ec580;
+
+$red            : #f77775;
+$red_dark       : #e45654;
+
+$purple         : #be89f0;
+$purple_dark    : #9d6bcd;
+
+$yellow         : #ffc76e;
+$yellow_dark    : #fbb23f;

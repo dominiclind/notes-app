@@ -1,0 +1,314 @@
+// vars
+
+$base-body-background:                          #fff;
+$base-body-font-family:                         "RobotoRegular", Helvetica, Arial, sans-serif;
+$base-body-font-weight:                         normal;
+$base-body-font-size:                           14px;
+$base-body-line-height:                         20px;
+$base-body-color:                               #444;
+
+$base-link-color:                               #07D;
+$base-link-text-decoration:                     none;
+$base-link-hover-color:                         #059;
+$base-link-hover-text-decoration:               underline;
+$base-em-color:                                 #D05;
+$base-ins-background:                           #ffa;
+$base-ins-color:                                #444;
+$base-mark-background:                          #ffa;
+$base-mark-color:                               #444;
+$base-selection-background:                     #39f;
+$base-selection-color:                          #fff;
+
+$base-margin-vertical:                          15px;
+
+$base-heading-font-family:                      "RobotoLight", Helvetica, Arial, sans-serif;
+$base-heading-font-weight:                      normal;
+$base-heading-color:                            #444;
+$base-heading-text-transform:                   none;
+$base-heading-margin-top:                       25px;
+$base-h1-font-size:                             36px;
+$base-h1-line-height:                           42px;
+$base-h2-font-size:                             24px;
+$base-h2-line-height:                           30px;
+$base-h3-font-size:                             18px;
+$base-h3-line-height:                           24px;
+$base-h4-font-size:                             16px;
+$base-h4-line-height:                           22px;
+$base-h5-font-size:                             14px;
+$base-h5-line-height:                           20px;
+$base-h6-font-size:                             12px;
+$base-h6-line-height:                           18px;
+
+$base-list-padding-left:                        30px;
+
+$base-hr-border:                                #ddd;
+$base-hr-border-width:                          1px;
+
+$base-blockquote-padding-left:                  15px;
+$base-blockquote-border:                        #ddd;
+$base-blockquote-border-width:                  5px;
+$base-blockquote-small-color:                   #999;
+$base-blockquote-font-size:                     16px;
+$base-blockquote-line-height:                   22px;
+
+$base-code-color:                               #D05;
+$base-code-font-size:                           12px;
+$base-code-font-family:                         Consolas, monospace, serif;
+
+$base-pre-padding:                              10px;
+$base-pre-background:                           #f5f5f5;
+$base-pre-color:                                #444;
+$base-pre-font-size:                            12px;
+$base-pre-line-height:                          18px;
+
+
+//body
+
+html { font-size: $base-body-font-size; }
+
+body {
+    background: $base-body-background;
+    font-family:  $base-body-font-family;
+    font-weight:  $base-body-font-weight;
+    line-height: $base-body-line-height;
+    color: $base-body-color;
+}
+
+// phones
+@media (max-width: $breakpoint-small) {
+	
+	// get dem strings if they long
+    body {
+        word-wrap: break-word;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        hyphens: auto;
+    }
+
+}
+
+//links
+
+a,
+.link {
+    color: $base-link-color;
+    text-decoration: $base-link-text-decoration;
+    cursor: pointer;
+}
+
+a:hover,
+.link:hover {
+    color: $base-link-hover-color;
+    text-decoration: $base-link-hover-text-decoration;
+}
+
+//ems
+em { color: $base-em-color; }
+
+
+ins {
+    background: $base-ins-background;
+    color: $base-ins-color;
+    text-decoration: none;
+}
+
+mark {
+    background: $base-mark-background;
+    color: $base-mark-color;
+}
+
+::-moz-selection {
+    background: $base-selection-background;
+    color: $base-selection-color;
+    text-shadow: none;
+}
+
+::selection {
+    background: $base-selection-background;
+    color: $base-selection-color;
+    text-shadow: none;
+}
+
+abbr[title],
+dfn[title] { cursor: help; }
+
+dfn[title] {
+    border-bottom: 1px dotted;
+    font-style: normal;
+}
+
+
+img {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+
+// preserve img dimensions
+.uk-img-preserve,
+.uk-img-preserve img,
+img[src*="maps.gstatic.com"], // 1
+img[src*="googleapis.com"] { max-width: none; }
+
+
+/* Spacing for block elements
+ ========================================================================== */
+
+p,
+hr,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+address,
+fieldset,
+figure { margin: 0 0 $base-margin-vertical 0; }
+
+* + p,
+* + hr,
+* + ul,
+* + ol,
+* + dl,
+* + blockquote,
+* + pre,
+* + address,
+* + fieldset,
+* + figure { margin-top: $base-margin-vertical; }
+
+// heads
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 $base-margin-vertical 0;
+    font-family:  $base-heading-font-family;
+    font-weight: $base-heading-font-weight;
+    color: $base-heading-color;
+    text-transform: $base-heading-text-transform;
+}
+
+* + h1,
+* + h2,
+* + h3,
+* + h4,
+* + h5,
+* + h6 { margin-top: $base-heading-margin-top; }
+
+h1, .h1 {
+    font-size: $base-h1-font-size;
+    line-height: $base-h1-line-height;
+}
+
+h2, .h2 {
+    font-size: $base-h2-font-size;
+    line-height: $base-h2-line-height;
+}
+
+h3, .h3 {
+    font-size: $base-h3-font-size;
+    line-height: $base-h3-line-height;
+}
+
+h4, .h4 {
+    font-size: $base-h4-font-size;
+    line-height: $base-h4-line-height;
+}
+
+h5, .h5 {
+    font-size: $base-h5-font-size;
+    line-height: $base-h5-line-height;
+}
+
+h6, .h6 {
+    font-size: $base-h6-font-size;
+    line-height: $base-h6-line-height;
+}
+
+
+ul,
+ol { padding-left: $base-list-padding-left; }
+
+ul > li > ul,
+ul > li > ol,
+ol > li > ol,
+ol > li > ul { margin: 0; }
+
+
+dt { font-weight: bold; }
+dd { margin-left: 0; }
+
+
+hr {
+    display: block;
+    padding: 0;
+    border: 0;
+    border-top: $base-hr-border-width solid $base-hr-border;
+}
+
+address { font-style: normal; }
+
+
+q,
+blockquote { font-style: italic; }
+
+blockquote {
+    padding-left: $base-blockquote-padding-left;
+    border-left: $base-blockquote-border-width solid $base-blockquote-border;
+    font-size: $base-blockquote-font-size;
+    line-height: $base-blockquote-line-height;
+}
+
+blockquote small {
+    display: block;
+    color: $base-blockquote-small-color;
+    font-style: normal;
+}
+
+
+blockquote p:last-of-type { margin-bottom: 5px; }
+
+
+
+code {
+    color: $base-code-color;
+    font-size: $base-code-font-size;
+    white-space: nowrap;
+}
+
+pre code {
+    color: inherit;
+    white-space: pre-wrap;
+
+}
+
+pre {
+    padding: $base-pre-padding;
+    background: $base-pre-background;
+    color: $base-pre-color;
+    font-size: $base-pre-font-size;
+    line-height: $base-pre-line-height;
+    -moz-tab-size: 4;
+    tab-size: 4;
+}
+
+
+// forms
+button,
+input:not([type="radio"]):not([type="checkbox"]),
+select { vertical-align: middle; }
+
+
+// iframe
+iframe { border: 0; }
+
+
+// Fix viewport for IE10 snap mode
+
+@media screen and (max-width: 400px) {
+    @-ms-viewport{
+        width: device-width;
+    }
+}
